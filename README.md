@@ -9,6 +9,7 @@ An intelligent, personalized anime recommendation backend built with Django, Pos
 - 🔐 **JWT Authentication** (Register/Login/Logout)
 - 🔍 **Dynamic Anime Search** using AniList GraphQL API
 - 💾 **Asynchronous Saving** of searched anime to PostgreSQL via Celery
+- 🎯 Personalized Recommendations based on user preferences with pagination support (offset & limit)
 - 🎯 **Personalized Recommendations** based on user preferences
 - ❤️ **User Preferences API** (genres, watched anime, language, rating thresholds)
 - 🌐 **Deployed on AWS Elastic Beanstalk** via Docker and CI/CD
