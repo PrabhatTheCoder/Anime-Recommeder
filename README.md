@@ -42,6 +42,8 @@ docker-compose up --build
 
 
 📦 API Endpoints
+**Base URL: http://35.154.74.55/
+**
 🔐 Authentication
 POST /auth/register/ – Register new user
 
@@ -88,24 +90,23 @@ Auto-deployments via GitHub Actions CI/CD
  Add user-based collaborative filtering model
 
 
-
 # Register
-curl -X POST http://<host>/auth/register/ -H "Content-Type: application/json" \
+curl -X POST http://35.154.74.55/auth/register/ -H "Content-Type: application/json" \
      -d '{"email": "admin@gmail.com", "name": "admin", "password": "admin"}'
 
 # Login
-curl -X POST http://<host>/auth/login/ -H "Content-Type: application/json" \
+curl -X POST http://35.154.74.55/auth/login/ -H "Content-Type: application/json" \
      -d '{"email": "admin@gmail.com", "password": "admin"}'
 
 # Get Access Token from Refresh
-curl -X GET 'http://<host>/auth/get-access-token/?refresh=<refresh_token>'
+curl -X GET 'http://35.154.74.55/auth/get-access-token/?refresh=<refresh_token>'
 
 # Search
-curl -X GET http://<host>/anime/search/?name=Naruto \
+curl -X GET http://35.154.74.55/anime/search/?name=Naruto \
      -H "Authorization: Bearer <access_token>"
 
 # Save Preferences
-curl -X POST http://<host>/user/preferences/ -H "Authorization: Bearer <access_token>" \
+curl -X POST http://35.154.74.55/user/preferences/ -H "Authorization: Bearer <access_token>" \
      -H "Content-Type: application/json" -d '{
        "favorite_genres": ["Action", "Sci-Fi"],
        "watched_anime_ids": ["2025"],
@@ -116,11 +117,11 @@ curl -X POST http://<host>/user/preferences/ -H "Authorization: Bearer <access_t
      }'
 
 # Get Recommendations
-curl -X GET http://<host>/anime/recommendations/?offset=10&limit=10 \
+curl -X GET http://35.154.74.55/anime/recommendations/?offset=10&limit=10 \
      -H "Authorization: Bearer <access_token>"
 
 # Logout
-curl -X POST http://<host>/auth/logout/ \
+curl -X POST http://35.154.74.55/auth/logout/ \
      -H "Content-Type: application/json" \
      -H "Authorization: Bearer <access_token>" \
      -d '{"refresh": "<refresh_token>"}'
